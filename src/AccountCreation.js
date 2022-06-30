@@ -13,7 +13,7 @@ import axios from 'axios';
         email: email,
         password: password,
       }
-      axios.post("http://localhost:8000/users/users/", postParams).then(response => console.log(response))
+      axios.post("https://steam-test-backend.herokuapp.com/users/users/", postParams).then(response => console.log(response))
     }
 
 
