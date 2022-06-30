@@ -22,7 +22,7 @@ const handleSubmit = event => {
       email: data.get('email'),
       password: data.get('password'),
   }
-  axios.post("http://localhost:8000/users/users/", postParams)
+  axios.post("https://steam-test-backend.herokuapp.com/users/users/", postParams)
   window.location.href = "/sign-in"
 }
 
