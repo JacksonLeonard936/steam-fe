@@ -4,6 +4,8 @@ import react from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import { API_URL } from "./constants.js";
+
 
 export const ProfilePage = () => {
     const [user, setUser] = React.useState()
@@ -22,7 +24,7 @@ export const ProfilePage = () => {
             game_name: "Tic Tac Toe",
             data: {}
         }
-        axios.post("http://localhost:8000/users/matches/", postParams).then((response) => {
+        axios.post(`${API_URL}/users/matches/`, postParams).then((response) => {
             console.log(response)
             setLatestGameLink(`/tic-tac-toe/${response.data.id}`)
         }
@@ -59,6 +61,6 @@ export const ProfilePage = () => {
     </a>
     
     function fetchUser(id){
-        axios.get(`http://localhost:8000/users/users/${id}`).then(response => setUser(response.data));
+        axios.get(`${API_URL}/users/users/${id}`).then(response => setUser(response.data));
     }
 }

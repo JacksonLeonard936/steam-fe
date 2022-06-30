@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './TicTacToe.css';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
-import { API_URL } from "constants.js";
+import { API_URL } from "./constants.js";
 
 // Doesn't check for winner when refreshing
 const determineTicTacToeWinner = (grid, number) => {

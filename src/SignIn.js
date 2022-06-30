@@ -14,7 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from "axios";
 import Snackbar from '@mui/material/Snackbar';
-import { API_URL } from "constants.js";
+import { API_URL } from "./constants.js";
 
 
 function Copyright(props) {
