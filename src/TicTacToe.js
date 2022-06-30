@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './TicTacToe.css';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
+import { API_URL } from "constants.js";
+
 // Doesn't check for winner when refreshing
 const determineTicTacToeWinner = (grid, number) => {
   const row = Math.floor(number/3);
@@ -103,7 +105,7 @@ class Square extends React.Component {
       this.fetchMatch(this.props.id, this.user_id)
     }
     fetchMatch(id, user_id){
-      axios.get(`http://localhost:8000/users/matches/${id}`, { params: { user_id: user_id } }).then(response => {
+      axios.get(`${API_URL}/users/matches/${id}`, { params: { user_id: user_id } }).then(response => {
         this.setState(() => ({ match: response.data }))
         this.createMovesArray(response.data.data?.moves ?? [])
       });
@@ -190,12 +192,12 @@ class Square extends React.Component {
     moves.push(move)
     data["moves"] = moves
     match.data = data
-    axios.put(`http://localhost:8000/users/matches/${match.id}/`, match)
+    axios.put(`${API_URL}/users/matches/${match.id}/`, match)
   }
 
   function completeMatch(match){
     match.is_match_in_progress = false;
-    axios.put(`http://localhost:8000/users/matches/${match.id}/`, match)
+    axios.put(`${API_URL}/users/matches/${match.id}/`, match)
     console.log("fin")
   }
 

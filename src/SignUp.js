@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from "axios";
+import { API_URL } from "constants.js";
 
 const handleSubmit = event => {
   event.preventDefault()
@@ -22,7 +23,7 @@ const handleSubmit = event => {
       email: data.get('email'),
       password: data.get('password'),
   }
-  axios.post("https://steam-test-backend.herokuapp.com/users/users/", postParams)
+  axios.post(`${API_URL}/users/users/`, postParams)
   window.location.href = "/sign-in"
 }
 

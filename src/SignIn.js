@@ -14,6 +14,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from "axios";
 import Snackbar from '@mui/material/Snackbar';
+import { API_URL } from "constants.js";
+
 
 function Copyright(props) {
   return (
@@ -42,7 +44,7 @@ export default function SignIn() {
       email: email,
       password: password,
     }
-    axios.post("http://localhost:8000/users/login", postParams).then(response => {
+    axios.post(`${API_URL}/users/login`, postParams).then(response => {
       const return_info = response.data
       localStorage.setItem("session_token", return_info["session_token"])
       localStorage.setItem("user_id", return_info["user_id"])

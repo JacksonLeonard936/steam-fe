@@ -9,6 +9,7 @@ import {
   import { ProfilePage } from './ProfilePage.js';
   import {Game} from "./TicTacToe.js";
 
+
 export const App = () => {
     return (
         <Router>
