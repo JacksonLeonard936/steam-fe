@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from "axios";
 import { API_URL } from "./constants.js";
 
+console.log(process.env)
 const handleSubmit = event => {
   event.preventDefault()
   const data = new FormData(event.currentTarget);

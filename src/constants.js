@@ -1,1 +1,1 @@
-export const API_URL = "https://steam-test-backend.herokuapp.com/"
+export const API_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://steam-test-backend.herokuapp.com'
